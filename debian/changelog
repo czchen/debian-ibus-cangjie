@@ -1,15 +1,20 @@
-ibus-cangjie (0.0.1~git20130325-0ubuntu2) raring; urgency=low
+ibus-cangjie (1.0-1) unstable; urgency=low
 
-  * Remove pycanberra.py from debian/copyright.
+  * New upstream version 1.0.
+  * Upload to Debian (Closes: #712684)
 
- -- Anthony Wong <anthony.wong@ubuntu.com>  Tue, 26 Mar 2013 02:02:08 +0800
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Mon, 16 Sep 2013 02:09:43 +0800
 
-ibus-cangjie (0.0.1~git20130325-0ubuntu1) raring; urgency=low
+1ibus-cangjie (0.0.1~git20130325-0ubuntu2) raring; urgency=low
 
-  * Update upstream source to remove pycanberra.py to resolve any
-    potential licensing issue.
+  * Fix maintainers field in debian/control to
+    Ubuntu Developers. (LP: #1167265)
+  * Add an dependency of gir1.2-ibus-1.0 (LP: #1189085)
+  * Cherry-pick patch setup: Declare the setup in the XML components
+    (upstream commit no.: a85d297bb395f38c4ec5022acc6d641a695b4ab4)
+    requested by upstream. (LP: #1189083)
 
- -- Anthony Wong <anthony.wong@ubuntu.com>  Tue, 26 Mar 2013 00:08:22 +0800
+ -- Howard Chan <smartboyhw@gmail.com>  Mon, 08 Jul 2013 21:24:42 +0800
 
 ibus-cangjie (0.0.1~git20130315-0ubuntu1) raring; urgency=low
 
