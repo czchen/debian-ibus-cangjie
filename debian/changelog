@@ -1,0 +1,18 @@
+ibus-cangjie (0.0.1~git20130325-0ubuntu2) raring; urgency=low
+
+  * Remove pycanberra.py from debian/copyright.
+
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Tue, 26 Mar 2013 02:02:08 +0800
+
+ibus-cangjie (0.0.1~git20130325-0ubuntu1) raring; urgency=low
+
+  * Update upstream source to remove pycanberra.py to resolve any
+    potential licensing issue.
+
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Tue, 26 Mar 2013 00:08:22 +0800
+
+ibus-cangjie (0.0.1~git20130315-0ubuntu1) raring; urgency=low
+
+  * Initial release.
+
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Thu, 14 Mar 2013 02:55:52 +0800
