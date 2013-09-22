@@ -15,7 +15,7 @@ Build-Depends: debhelper (>= 9),
                libibus-1.0-dev
 Standards-Version: 3.9.4
 Homepage: http://ibus-cangjie.opensource.hk/
-Vcs-Git: git://git.debian.org/git/pkg-ime/ibus-cangjie.git
+Vcs-Git: git://anonscm.debian.org/pkg-ime/ibus-cangjie.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-ime/ibus-cangjie.git;a=summary
 X-Python3-Version: >= 3.2
 
