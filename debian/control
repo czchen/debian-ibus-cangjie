@@ -2,8 +2,10 @@ Source: ibus-cangjie
 Section: utils
 Priority: extra
 Maintainer: IME Packaging Team <pkg-ime-devel@lists.alioth.debian.org>
-Uploaders: Anthony Wong <anthony.wong@ubuntu.com>
+Uploaders: Anthony Wong <anthony.wong@ubuntu.com>,
+           Anthony Fok <foka@debian.org>
 Build-Depends: debhelper (>= 9),
+               dh-autoreconf,
                autotools-dev,
                intltool,
                pkg-config,
@@ -12,7 +14,7 @@ Build-Depends: debhelper (>= 9),
                python3-pycangjie,
                libibus-1.0-dev
 Standards-Version: 3.9.4
-Homepage: https://github.com/bochecha/ibus-cangjie
+Homepage: http://ibus-cangjie.opensource.hk/
 Vcs-Git: git://git.debian.org/git/pkg-ime/ibus-cangjie.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-ime/ibus-cangjie.git;a=summary
 X-Python3-Version: >= 3.2

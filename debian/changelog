@@ -1,11 +1,21 @@
 ibus-cangjie (1.0-1) unstable; urgency=low
 
+  [ Anthony Wong ]
   * New upstream version 1.0.
   * Upload to Debian (Closes: #712684)
 
- -- Anthony Wong <anthony.wong@ubuntu.com>  Mon, 16 Sep 2013 02:09:43 +0800
+  [ Anthony Fok ]
+  * Update debian/copyright to reflect upstream's relicensing from
+    LGPL-3+ to GPL-3+ (as of git20130413).  Thanks to Paul Tagliamonte
+    of the ftpmaster team for catching the change!
+  * Change Homepage field to http://ibus-cangjie.opensource.hk/
+  * Add myself to the Uploaders field
+  * Add debian/watch
+  * Use dh-autoreconf to avoid potential build problem when timestamps differ.
 
-1ibus-cangjie (0.0.1~git20130325-0ubuntu2) raring; urgency=low
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Sun, 22 Sep 2013 17:50:27 +0800
+
+ibus-cangjie (0.0.1~git20130325-0ubuntu2) raring; urgency=low
 
   * Fix maintainers field in debian/control to
     Ubuntu Developers. (LP: #1167265)
