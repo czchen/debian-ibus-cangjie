@@ -1,3 +1,11 @@
+ibus-cangjie (2.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update debian/watch to use new upstream URL.
+  * Depends python3-pycangjie (>= 1.0)
+
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Mon, 06 Jan 2014 02:57:07 +0800
+
 ibus-cangjie (1.0-1) unstable; urgency=low
 
   [ Anthony Wong ]

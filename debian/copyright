@@ -3,8 +3,9 @@ Upstream-Name: ibus-cangjie
 Source: https://github.com/bochecha/ibus-cangjie
 
 Files: *
-Copyright: 2012-2013 Mathieu Bridon <bochecha@fedoraproject.org>
-           2013      Benau <benau2006@yahoo.com.hk>
+Copyright: 2012-2014 Benau <benau2006@yahoo.com.hk>
+                     Koala Yeung <koalay@gmail.com>
+                     Mathieu Bridon <bochecha@fedoraproject.org>
 License: GPL-3+
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23,7 +24,7 @@ License: GPL-3+
  Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
 
 Files: debian/*
-Copyright: 2012-2013 Anthony Wong <anthony.wong@canonical.com>
+Copyright: 2012-2014 Anthony Wong <anthony.wong@ubuntu.com>
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
