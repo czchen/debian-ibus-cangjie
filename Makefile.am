@@ -70,6 +70,7 @@ icon_files = $(icon16_DATA) $(iconscalable_DATA)
 # -- src/ ----------------------------
 ibus_cangjie_PYTHON = \
 	src/__init__.py \
+	src/canberra.py \
 	src/engine.py \
 	src/setup.py \
 	$(NULL)
@@ -82,7 +83,7 @@ TESTS = tests/run_tests
 tests/run_tests: tests/run_tests.in
 	$(MKDIR_P) tests
 	sed -e 's&@PYTHON_BIN@&$(PYTHON)&g' \
-	    -e 's&@SRCDIR@&$(srcdir)&g' $< > $@
+	    -e 's&@SRCDIR@&$(srcdir)&g' \
 	    -e 's&@BUILDDIR@&$(builddir)&g' $< > $@
 	chmod +x $@
 
@@ -117,7 +118,12 @@ CLEANFILES = \
 	$(pkglibexec_SCRIPTS) \
 	src/*.pyc \
 	tests/run_tests \
+	data/gschemas.compiled \
 	$(NULL)
+
+clean-local:
+	-rm -rf src/__pycache__
+	-rm -rf tests/__pycache__
 
 EXTRA_DIST = \
 	autogen.sh \

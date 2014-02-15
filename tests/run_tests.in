@@ -28,6 +28,7 @@ import unittest
 sys.path.insert(0, "@SRCDIR@")
 import src
 sys.modules["ibus_cangjie"] = src
+sys.path.pop(0)
 
 
 # -- Define some mock classes for the tests ----------------------------------
@@ -96,9 +97,8 @@ class MockCanberra:
     def __init__(self):
         self._mock_played_events = []
 
-    def play(self, playId, *args):
-        if "dialog-error" in args:
-            self._mock_played_events.append("dialog-error")
+    def play_error(self):
+        self._mock_played_events.append("error")
 
 
 # -- Monkey patch the environment with the mock classes ----------------------
@@ -108,18 +108,18 @@ sys.modules["gi.repository.IBus"].LookupTable = MockLookupTable
 sys.modules["gi.repository.IBus"].Property = MockProperty
 sys.modules["gi.repository.IBus"].PropList = MockPropList
 
-try:
-    import pycanberra
-    sys.modules["pycanberra"].Canberra = MockCanberra
-    os.environ["IBUS_CANGJIE_TESTS_HAVE_PYCANBERRA"] = "true"
-except ImportError:
-    # Let the tests know that they shouldn't try pycanberra
-    os.environ["IBUS_CANGJIE_TESTS_HAVE_PYCANBERRA"] = "false"
+import ibus_cangjie.canberra
+sys.modules["ibus_cangjie.canberra"].Canberra = MockCanberra
 
 
+# -- Set some environment variables for the tests ----------------------------
 # The unit tests will need this to find the settings schemas
 os.environ["GSETTINGS_SCHEMA_DIR"] = "@BUILDDIR@/data"
 subprocess.check_call(["glib-compile-schemas", os.environ["GSETTINGS_SCHEMA_DIR"]])
+
+# The unit tests will need this to find the preferences UI
+os.environ["PREFERENCES_UI_DIR"] = "@SRCDIR@/data"
+
 
 # -- Load and run our unit tests ---------------------------------------------
 loader = unittest.TestLoader()
