@@ -593,6 +593,7 @@ icon_files = $(icon16_DATA) $(iconscalable_DATA)
 # -- src/ ----------------------------
 ibus_cangjie_PYTHON = \
 	src/__init__.py \
+	src/canberra.py \
 	src/engine.py \
 	src/setup.py \
 	$(NULL)
@@ -616,6 +617,7 @@ CLEANFILES = \
 	$(pkglibexec_SCRIPTS) \
 	src/*.pyc \
 	tests/run_tests \
+	data/gschemas.compiled \
 	$(NULL)
 
 EXTRA_DIST = \
@@ -1429,7 +1431,7 @@ maintainer-clean-generic:
 	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
 clean: clean-recursive
 
-clean-am: clean-generic mostlyclean-am
+clean-am: clean-generic clean-local mostlyclean-am
 
 distclean: distclean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
@@ -1508,15 +1510,15 @@ uninstall-am: uninstall-appdataDATA uninstall-binSCRIPTS \
 
 .PHONY: $(am__recursive_targets) CTAGS GTAGS TAGS all all-am \
 	am--refresh check check-TESTS check-am clean clean-cscope \
-	clean-generic cscope cscopelist-am ctags ctags-am dist \
-	dist-all dist-bzip2 dist-gzip dist-lzip dist-shar dist-tarZ \
-	dist-xz dist-zip distcheck distclean distclean-generic \
-	distclean-hdr distclean-tags distcleancheck distdir \
-	distuninstallcheck dvi dvi-am html html-am info info-am \
-	install install-am install-appdataDATA install-binSCRIPTS \
-	install-componentDATA install-data install-data-am \
-	install-desktopDATA install-dvi install-dvi-am install-exec \
-	install-exec-am install-html install-html-am \
+	clean-generic clean-local cscope cscopelist-am ctags ctags-am \
+	dist dist-all dist-bzip2 dist-gzip dist-lzip dist-shar \
+	dist-tarZ dist-xz dist-zip distcheck distclean \
+	distclean-generic distclean-hdr distclean-tags distcleancheck \
+	distdir distuninstallcheck dvi dvi-am html html-am info \
+	info-am install install-am install-appdataDATA \
+	install-binSCRIPTS install-componentDATA install-data \
+	install-data-am install-desktopDATA install-dvi install-dvi-am \
+	install-exec install-exec-am install-html install-html-am \
 	install-ibus_cangjiePYTHON install-ibus_cangjie_dataDATA \
 	install-icon16DATA install-iconscalableDATA install-info \
 	install-info-am install-man install-pdf install-pdf-am \
@@ -1560,7 +1562,7 @@ scripts/ibus-%-cangjie: scripts/ibus-%-cangjie.in Makefile
 tests/run_tests: tests/run_tests.in
 	$(MKDIR_P) tests
 	sed -e 's&@PYTHON_BIN@&$(PYTHON)&g' \
-	    -e 's&@SRCDIR@&$(srcdir)&g' $< > $@
+	    -e 's&@SRCDIR@&$(srcdir)&g' \
 	    -e 's&@BUILDDIR@&$(builddir)&g' $< > $@
 	chmod +x $@
 
@@ -1578,6 +1580,10 @@ AUTHORS:
 	fi
 $(top_builddir)/data:
 	$(AM_V_GEN) $(MKDIR_P) $(top_builddir)/data
+
+clean-local:
+	-rm -rf src/__pycache__
+	-rm -rf tests/__pycache__
 
 .PHONY: AUTHORS $(top_builddir)/data
 
