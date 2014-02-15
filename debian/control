@@ -12,7 +12,8 @@ Build-Depends: debhelper (>= 9),
                python3-all-dev (>= 3.2),
                python3-gi,
                python3-pycangjie (>= 1.0),
-               libibus-1.0-dev
+               libibus-1.0-dev,
+               gir1.2-gtk-3.0
 Standards-Version: 3.9.5
 Homepage: http://ibus-cangjie.opensource.hk/
 Vcs-Git: git://anonscm.debian.org/pkg-ime/ibus-cangjie.git
