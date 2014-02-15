@@ -1,3 +1,9 @@
+ibus-cangjie (2.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Sat, 15 Feb 2014 18:36:41 +0800
+
 ibus-cangjie (2.0-1) unstable; urgency=low
 
   * New upstream release.
