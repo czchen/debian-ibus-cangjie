@@ -3,7 +3,8 @@ Section: utils
 Priority: extra
 Maintainer: IME Packaging Team <pkg-ime-devel@lists.alioth.debian.org>
 Uploaders: Anthony Wong <anthony.wong@ubuntu.com>,
-           Anthony Fok <foka@debian.org>
+           Anthony Fok <foka@debian.org>,
+           ChangZhuo Chen (陳昌倬) <czchen@gmail.com>
 Build-Depends: debhelper (>= 9),
                dh-autoreconf,
                autotools-dev,
