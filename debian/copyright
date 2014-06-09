@@ -24,7 +24,7 @@ License: GPL-3+
  Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
 
 Files: debian/*
-Copyright: 2012-2014 Anthony Wong <anthony.wong@ubuntu.com>
+Copyright: 2012-2014 Anthony Wong <yp@anthonywong.net>
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
