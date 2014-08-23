@@ -8,8 +8,8 @@ SUBDIRS = po
 # -- scripts/ ------------------------
 bin_SCRIPTS = scripts/ibus-setup-cangjie
 
-pkglibexec_SCRIPTS = scripts/ibus-engine-cangjie
-libexecdir = $(prefix)/lib
+libexec_SCRIPTS = scripts/ibus-engine-cangjie
+libexecdir = $(prefix)/lib/ibus
 
 scripts/ibus-%-cangjie: scripts/ibus-%-cangjie.in Makefile
 	$(AM_V_GEN) \
@@ -38,7 +38,7 @@ componentdir = $(COMPONENT_DIR)
 	sed -e 's&@_VERSION@&$(VERSION)&g' \
 	    -e 's&@BINDIR@&$(bindir)&g' \
 	    -e 's&@ICON16DIR@&$(icon16dir)&g' \
-	    -e 's&@PKGLIBEXECDIR@&$(pkglibexecdir)&g' $< > $@
+	    -e 's&@PKGLIBEXECDIR@&$(libexecdir)&g' $< > $@
 
 gsettings_in_files = data/org.cangjians.ibus.cangjie.gschema.xml.in data/org.cangjians.ibus.quick.gschema.xml.in
 gsettings_SCHEMAS = $(gsettings_in_files:.xml.in=.xml)
@@ -115,7 +115,7 @@ CLEANFILES = \
 	$(desktop_in_files) \
 	$(gsettings_SCHEMAS) \
 	$(bin_SCRIPTS) \
-	$(pkglibexec_SCRIPTS) \
+	$(libexec_SCRIPTS) \
 	src/*.pyc \
 	tests/run_tests \
 	data/gschemas.compiled \

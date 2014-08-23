@@ -1,9 +1,13 @@
 ibus-cangjie (2.2-2) unstable; urgency=medium
 
+  [ChangZhuo Chen]
   * Change Architecture to all.
     Thanks to Scott Kitterman (Closes: #750881)
   * Add dh-python as Build-Depends.
     Thanks to Osamu Aoki
+
+  [Anthony Wong]
+  * Install engine to /usr/lib/ibus (Closes: #746978)
 
  -- ChangZhuo Chen (陳昌倬) <czchen@gmail.com>  Sun, 10 Aug 2014 19:16:46 +0800
 
