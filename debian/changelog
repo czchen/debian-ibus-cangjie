@@ -9,7 +9,7 @@ ibus-cangjie (2.2-2) unstable; urgency=medium
   [Anthony Wong]
   * Install engine to /usr/lib/ibus (Closes: #746978)
 
- -- Anthony Wong <anthony.wong@ubuntu.com>  Sun, 24 Aug 2014 01:49:55 +0800
+ -- Anthony Wong <yp@anthonywong.net>  Sun, 24 Aug 2014 01:49:55 +0800
 
 ibus-cangjie (2.2-1) unstable; urgency=medium
 
